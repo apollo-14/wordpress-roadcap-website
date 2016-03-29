@@ -1,0 +1,17 @@
+-.-
+
+<!--
+<span id=""></span>
+-->
+<span id="current_time"></span>
+<span id="num_days_alive"></span>
+<span id="age"></span>
+
+<span id="span_time">p_time
+<input id="p_time" name="p_time" type="date" />
+</span>
+
+<!-- Corey Roadcap custom script to display current age -->
+<script>// <![CDATA[
+var myVar = setInterval(myTimerPage, 1000); function myTimerPage() { var my_bday = new Date(1991,4,24,8,30,0); var now = new Date(); var current_time = now.toLocaleTimeString(); var time_diff_ms = Math.abs(now.getTime() - my_bday.getTime()); var time_diff_s = Math.floor(time_diff_ms / 1000); var time_diff_d = dateDiffInDays(my_bday, now); //var p_time = document.getElementById("p_time").innerHTML; document.getElementById("current_time").innerHTML = current_time; document.getElementById("num_days_alive").innerHTML = time_diff_s; document.getElementById("age").innerHTML = time_diff_d; //document.getElementById("span_time").innerHTML = p_time; } var _MS_PER_DAY = 1000 * 60 * 60 * 24; // a and b are javascript Date objects function dateDiffInDays(a, b) { // Discard the time and time-zone information. var utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate()); var utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate()); return Math.floor((utc2 - utc1) / _MS_PER_DAY); }
+// ]]></script>
